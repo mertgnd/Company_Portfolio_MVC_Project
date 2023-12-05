@@ -1,0 +1,18 @@
+﻿@using EntityLayer.Entities
+@model List<Address>
+
+@foreach (var item in Model)
+{
+	<h3 class="tittle">Contact Us</h3>
+	<p class="heading-btm-w3ls">I am so responsive to reply your messages.</p>
+	<div class="col-md-3 contact-left">
+		<h4>Our Address</h4>
+		<p>@item.Adress</p>
+		<p>@item.City</p>
+		<p>@item.Country</p>
+		<h4>Phone</h4>
+		<p>@item.Phone</p>
+		<h4>E-Mail</h4>
+		<p>@item.Mail</p>
+	</div>
+}

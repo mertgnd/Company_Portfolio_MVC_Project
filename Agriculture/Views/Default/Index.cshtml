@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadPartial")
+<body>
+	<div class="header">
+		<div class="container">
+			@await Component.InvokeAsync("_TopAddressPartial")
+			@await Component.InvokeAsync("_SocialMediaPartial")
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+	@await Component.InvokeAsync("_NavbarPartial")
+	
+	@await Component.InvokeAsync("_AboutPartial")
+	@await Component.InvokeAsync("_ServicePartial")
+	@await Component.InvokeAsync("_TeamPartial")
+	@await Component.InvokeAsync("_AnnouncementPartial")
+	@await Component.InvokeAsync("_GalleryPartial")
+
+	<div class="contact-agile" id="contact">
+		<div class="container">
+			@await Component.InvokeAsync("_AddressPartial")
+ 			@await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+		</div>
+	</div>
+
+	@await Component.InvokeAsync("_MapPartial")
+	@await Component.InvokeAsync("_SocialAccountsPartial")
+
+	<div class="copy">
+		<p>@DateTime.Now.Year. All Rights Reserved | Design by <a href="http://mertgndogdu.com" target="_blank">Mert Gundogdu</a> </p>
+	</div>
+	@await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
+</body>
+</html>

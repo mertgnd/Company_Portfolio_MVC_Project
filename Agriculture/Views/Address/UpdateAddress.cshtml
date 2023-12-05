@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Entities.Address
+@{
+    ViewData["Title"] = "UpdateAddress";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Address Information</h4>
+            <form method="post">
+                @Html.HiddenFor(x => x.AddressId)
+                <div class="form-group">
+                    <label>Address</label>
+                    <br />
+                    <span asp-validation-for="Adress" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Adress">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <br />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="City">
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <br />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Country">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <br />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                    <input type="tel" class="form-control" asp-for="Phone">
+                </div>
+                <div class="form-group">
+                    <label>Mail Address</label>
+                    <br />
+                    <span asp-validation-for="Mail" class="text-danger"></span>
+                    <input type="tel" class="form-control" asp-for="Mail">
+                </div>
+                <div class="form-group">
+                    <label>Map Info</label>
+                    <br />
+                    <span asp-validation-for="Mapinfo" class="text-danger"></span>
+                    <input type="tel" class="form-control" asp-for="Mapinfo">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+                <a href="/Address/Index/" class="btn btn-outline-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Entities.Gallery
+@{
+    ViewData["Title"] = "UpdateGallery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Gallery</h4>
+            <form method="post" enctype="multipart/form-data">
+                @Html.HiddenFor(x => x.GalleryID)
+                <div class="form-group">
+                    <label>Title</label>
+                    <br />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Title">
+                </div>
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <div class="form-group">
+                        <label>Current Image</label>
+                        <br />
+                        <img src="@Model.ImageUrl" alt="Current Image" class="img-fluid" style="max-width: 200px; max-height: 150px;">
+                    </div>
+                }
+                <div class="form-group">
+                    <label>Image Upload</label>
+                    <br />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    <input type="file" class="form-control" asp-for="ImageFile">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <br />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <textarea cols="30" rows="5" asp-for="Description" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+                <a href="/Gallery/Index/" class="btn btn-outline-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+

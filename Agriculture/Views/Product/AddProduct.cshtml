@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Entities.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add New Project</h4>
+            <form method="post">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <br />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="ProductName">
+                </div>
+                <div class="form-group">
+                    <label>Product Quantity</label>
+                    <br />
+                    <span asp-validation-for="ProductValue" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="ProductValue">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+                <a href="/Product/Index/" class="btn btn-outline-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

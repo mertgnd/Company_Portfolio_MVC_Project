@@ -1,0 +1,78 @@
+﻿@using EntityLayer.Entities
+@model List<SliderLogo>
+
+@foreach ( var item in Model.Take(1))
+{
+	<div class="slider" style="background: url(@item.ImageUrlSlider) no-repeat 0px 0px;background-size: cover; min-height: 700px;">
+		<div class="header-bottom">
+			<div class="container">
+				<nav class="navbar navbar-default">
+
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="logo">
+							<a href="/"><img src="@item.ImageUrlLogo" style="max-height: 90px !important;" alt=""></a>
+						</div>
+					</div>
+
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+						<nav class="cl-effect-1" id="cl-effect-1">
+							<ul class="nav navbar-nav">
+								<li><a href="#home" class="active" data-hover="Home">Home</a></li>
+								<li><a href="#about" class="scroll" data-hover="About">About</a></li>
+								<li><a href="#services" class="scroll" data-hover="Services">Services</a></li>
+								<li><a href="#team" class="scroll" data-hover="Team">Team</a></li>
+								<li><a href="#gallery" class="scroll" data-hover="Projects">Gallery</a></li>
+								<li><a href="#contact" class="scroll" data-hover="Contact">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+
+				</nav>
+				<div class="w3ls_search">
+					<div class="cd-main-header">
+						<ul class="cd-header-buttons">
+							<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+						</ul>
+					</div>
+					<div id="cd-search" class="cd-search">
+						<form action="#" method="post">
+							<input name="Search" type="search" placeholder="Search...">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="callbacks_container">
+			<ul class="rslides" id="slider3">
+				<li>
+					<div class="slider-info">
+						<h3>@item.SliderTitle</h3>
+						<p>@item.SliderDescription</p>
+						<div class="readmore-w3"><a class="readmore" href="#" data-toggle="modal" data-target="#myModal1">Read More</a></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>@item.PopUpTitle</h4>
+					<img src="@item.ImageUrlPopUp" alt=" " class="img-responsive">
+					<h5>@item.PopUpSubTitle</h5>
+					<p>@item.PopUpDescription</p>
+				</div>
+			</div>
+		</div>
+	</div>
+}

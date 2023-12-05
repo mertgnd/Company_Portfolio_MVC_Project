@@ -1,0 +1,94 @@
+﻿@model EntityLayer.Entities.SliderLogo
+@{
+    ViewData["Title"] = "UpdateSliderLogo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Team Member</h4>
+            <form method="post" enctype="multipart/form-data">
+                @Html.HiddenFor(x => x.Id)
+
+                @if (!string.IsNullOrEmpty(Model.ImageUrlLogo))
+                {
+                    <div class="form-group">
+                        <label>Existing Logo Image</label>
+                        <br />
+                        <img src="@Model.ImageUrlLogo" alt="Existing Logo Image" class="img-fluid" style="max-width: 200px; max-height: 150px;" />
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label>Upload Logo Image</label>
+                    <br />
+                    <span asp-validation-for="ImageFileLogo" class="text-danger"></span>
+                    <input type="file" class="form-control" asp-for="ImageFileLogo">
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ImageUrlSlider))
+                {
+                    <div class="form-group">
+                        <label>Existing Slider Image</label>
+                        <br />
+                        <img src="@Model.ImageUrlSlider" alt="Existing Slider Image" class="img-fluid" style="max-width: 200px; max-height: 150px;" />
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label>Upload Slider Image</label>
+                    <br />
+                    <span asp-validation-for="ImageFileSlider" class="text-danger"></span>
+                    <input type="file" class="form-control" asp-for="ImageFileSlider">
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ImageUrlPopUp))
+                {
+                    <div class="form-group">
+                        <label>Existing PopUp Image</label>
+                        <br />
+                        <img src="@Model.ImageUrlPopUp" alt="Existing PopUp Image" class="img-fluid" style="max-width: 200px; max-height: 150px;" />
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label>Upload PopUp Image </label>
+                    <br />
+                    <span asp-validation-for="ImageFilePopUp" class="text-danger"></span>
+                    <input type="file" class="form-control" asp-for="ImageFilePopUp">
+                </div>
+
+                <div class="form-group">
+                    <label>Slider Title</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="SliderTitle">
+                </div>
+
+                <div class="form-group">
+                    <label>Slider Desription</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="SliderDescription">
+                </div>
+
+                <div class="form-group">
+                    <label>PopUp Title</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="PopUpTitle">
+                </div>
+                <div class="form-group">
+                    <label>PopUp SubTitle</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="PopUpSubTitle">
+                </div>
+                <div class="form-group">
+                    <label>PopUp Description</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="PopUpDescription">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+                <a href="/SliderLogo/Index/" class="btn btn-outline-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

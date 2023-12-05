@@ -1,0 +1,49 @@
+﻿@model AgriculturePresentation.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Profile</h4>
+            <form method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <br />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="UserName">
+                </div>
+                <div class="form-group">
+                    <label>E-Mail</label>
+                    <br />
+                    <span asp-validation-for="Mail" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Mail">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <br />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Phone">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <br />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <input type="password" class="form-control" asp-for="Password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <br />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    <input type="password" class="form-control" asp-for="ConfirmPassword">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+

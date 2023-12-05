@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Entities.Contact
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Contact Details</h4>
+            <form method="post">
+                @Html.HiddenFor(x => x.ContactID)
+                <div class="form-group">
+                    <label>Name - Surname</label>
+                    <br />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Name">
+                </div>
+                <div class="form-group">
+                    <label>Mail Adress</label>
+                    <br />
+                    <span asp-validation-for="Mail" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Mail">
+                </div>
+                <div class="form-group">
+                    <label>Message Details</label>
+                    <br />
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                    <textarea asp-for="Message" cols="3" rows="5" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <br />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Date">
+                </div>
+                <a href="/Contact/Index/" class="btn btn-outline-warning">Message List</a>
+            </form>
+        </div>
+    </div>
+</div>

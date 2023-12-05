@@ -1,0 +1,42 @@
+﻿﻿<div class="row">
+    <div class="col-md-3 grid-margin stretch-card">
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <!DOCTYPE html>
+                <html>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                    <body>
+                        <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+                        <script>
+                            var xValues = ["Asp.net Core", "Python Django", "Html & Css", "React Js", "Java"];
+                            var yValues = [@ViewBag.asp_project_count, @ViewBag.pyhton_django_project_count, @ViewBag.html_css_project_count, @ViewBag.js_project_count ,@ViewBag.java_project_count];
+                            var barColors = ["red", "green", "blue", "orange", "brown"];
+
+                            new Chart("myChart1", {
+                                type: "bar",
+                                data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                        backgroundColor: barColors,
+                                        data: yValues
+                                    }]
+                                },
+                                options: {
+                                    legend: { display: false },
+                                    title: {
+                                        display: true,
+                                        text: "Project Number With Technologies"
+                                    }
+                                }
+                            });
+                        </script>
+                    </body>
+                </html>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 grid-margin stretch-card">
+    </div>
+</div>

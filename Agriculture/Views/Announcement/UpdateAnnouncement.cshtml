@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Entities.Announcement
+@{
+    ViewData["Title"] = "UpdateAnnouncement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Announcement</h4>
+            <form method="post">
+                @Html.HiddenFor(x => x.AnnouncementID)
+                <div class="form-group">
+                    <label>Title</label>
+                    <br />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Title">
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <br />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                    <input type="date" class="form-control" asp-for="Date">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <br />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <textarea cols="30" rows="5" asp-for="Description" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+                <a href="/Announcement/Index/" class="btn btn-outline-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

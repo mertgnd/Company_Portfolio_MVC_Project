@@ -1,0 +1,66 @@
+﻿@model EntityLayer.Entities.Team
+@{
+    ViewData["Title"] = "UpdateTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Team Member</h4>
+            <form method="post" enctype="multipart/form-data">
+                @Html.HiddenFor(x => x.TeamID)
+                <div class="form-group">
+                    <label>Name - Surname</label>
+                    <br />
+                    <span asp-validation-for="PersonName" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="PersonName">
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <br />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="Title">
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <div class="form-group">
+                        <label>Existing Image</label>
+                        <br />
+                        <img src="@Model.ImageUrl" alt="Existing Image" class="img-fluid" style="max-width: 200px; max-height: 150px;" />
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label>Image Upload</label>
+                    <br />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    <input type="file" class="form-control" asp-for="ImageFile">
+                </div>
+                <div class="form-group">
+                    <label>Facebook Link</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="FacebookUrl">
+                </div>
+                <div class="form-group">
+                    <label>Instagram Link</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="InstagramUrl">
+                </div>
+                <div class="form-group">
+                    <label>Twitter Link</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="TwitterUrl">
+                </div>
+                <div class="form-group">
+                    <label>Website Link</label>
+                    <br />
+                    <input type="text" class="form-control" asp-for="WebsiteUrl">
+                </div>
+                <button type="submit" class="btn btn-outline-info">Save</button>
+                <a href="/Team/Index/" class="btn btn-outline-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
